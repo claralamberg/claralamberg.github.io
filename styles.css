@@ -1,0 +1,19 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffe8fe;;
+  color: black;
+  padding: 20px;
+  text-align: left;
+  z-index: 1000;
+}
+body
+{background-color: #ffe8fe;}
+h1
+{color: black;}
+h1{font-size: 50px;}
+h1{font-family: playfair;}
+h2{color: black;}
+h2{font-size: 80px;}
