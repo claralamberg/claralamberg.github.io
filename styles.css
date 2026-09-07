@@ -29,7 +29,7 @@ body {
   inherits: true;
   initial-value: #fffff3;
 }
- 
+
 header {
   --header-fg: #fffff3;
   position: fixed;
@@ -42,12 +42,11 @@ header {
   align-items: center;
   padding: 2.25rem clamp(1.5rem, 5vw, 4rem) 1.25rem;
   background-color: rgba(255, 255, 227, 0);
- 
-  animation: header-solidify linear both;
-  animation-timeline: scroll(root block);
-  animation-range: 0 100vh;
 }
- 
+
+/* Only run the scroll-linked solidify effect in browsers that support
+   animation-timeline. Without this guard, unsupported browsers (Safari)
+   fall back to a 0s duration and jump straight to the "to" keyframe. */
 @supports (animation-timeline: scroll()) {
   header {
     animation: header-solidify linear both;
@@ -55,6 +54,7 @@ header {
     animation-range: 0 100vh;
   }
 }
+
 @keyframes header-solidify {
   from {
     background-color: transparent;
@@ -67,7 +67,7 @@ header {
     --header-fg: #1a090a;
   }
 }
- 
+
 .name {
   font-family: var(--serif);
   font-size: 1.4rem;
@@ -75,12 +75,12 @@ header {
   letter-spacing: 0.01em;
   color: var(--header-fg);
 }
- 
+
 nav {
   display: flex;
   gap: 1.75rem;
 }
- 
+
 nav a {
   color: var(--header-fg);
   text-decoration: none;
@@ -112,7 +112,7 @@ nav a:hover::after {
   overflow: hidden;
   background: var(--wine-black);
 }
- 
+
 .hero-image {
   position: absolute;
   inset: 0;
@@ -121,11 +121,19 @@ nav a:hover::after {
   object-fit: cover;
   transform-origin: center top;
   will-change: transform, opacity;
-  animation: hero-shrink linear both;
-  animation-timeline: scroll(root block);
-  animation-range: 0 100vh;
 }
- 
+
+/* Same guard as the header: only animate the shrink/fade in browsers
+   that support scroll-driven animations. Unsupported browsers (Safari)
+   now just show the image static instead of jumping to invisible. */
+@supports (animation-timeline: scroll()) {
+  .hero-image {
+    animation: hero-shrink linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100vh;
+  }
+}
+
 @keyframes hero-shrink {
   from {
     transform: translateY(0) scale(1);
@@ -136,7 +144,7 @@ nav a:hover::after {
     opacity: 0;
   }
 }
- 
+
 .hero-image-overlay {
   position: absolute;
   inset: 0;
@@ -190,7 +198,7 @@ nav a:hover::after {
   margin: 0 auto;
   padding: 2rem clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vw, 6rem);
 }
- 
+
 .card {
   display: flex;
   flex-direction: column;
@@ -202,33 +210,33 @@ nav a:hover::after {
   border: 1px solid rgba(76, 5, 12, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
- 
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(26, 9, 10, 0.14);
   border-color: rgba(76, 5, 12, 0.28);
 }
- 
+
 .card-image {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--wine-black);
 }
- 
+
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
- 
+
 .card-body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   padding: 1.1rem 1.1rem 1.4rem;
 }
- 
+
 .card-body h2 {
   font-family: var(--serif);
   font-weight: 600;
@@ -236,28 +244,28 @@ nav a:hover::after {
   margin: 0;
   color: var(--wine-black);
 }
- 
+
 .card-body p {
   font-size: 0.95rem;
   line-height: 1.55;
   color: #5a3a3d;
   margin: 0;
 }
- 
+
 .card-eyebrow {
   font-size: 0.78rem;
   color: var(--dusty-blue);
   font-weight: 500;
   letter-spacing: 0.03em;
 }
- 
+
 /* ---------- Footer ---------- */
 footer {
   padding: 2rem clamp(1.5rem, 5vw, 4rem) 3rem;
   font-size: 0.82rem;
   color: var(--wine-deep);
 }
- 
+
 /* ---------- Responsive ---------- */
 @media (max-width: 560px) {
   .cards {
@@ -265,7 +273,7 @@ footer {
     gap: 2.25rem;
   }
 }
- 
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   * {
