@@ -48,6 +48,13 @@ header {
   animation-range: 0 100vh;
 }
  
+@supports (animation-timeline: scroll()) {
+  header {
+    animation: header-solidify linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100vh;
+  }
+}
 @keyframes header-solidify {
   from {
     background-color: transparent;
