@@ -3,11 +3,20 @@
   --wine-deep: #4c050c;
   --wine-black: #1a090a;
   --dusty-blue: #94b1c8;
-  --serif: helvetica;
-  --sans: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --muted: #70585b;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --page-pad: clamp(1.25rem, 5vw, 4rem);
+  --content-width: 1180px;
 }
 
-* {
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -21,267 +30,421 @@ body {
   color: var(--wine-black);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
 
 /* ---------- Header ---------- */
-@property --header-fg {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: #fffff3;
-}
 
-header {
-  --header-fg: #fffff3;
+.site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   z-index: 20;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 2.25rem clamp(1.5rem, 5vw, 4rem) 1.25rem;
-  background-color: rgba(255, 255, 227, 0);
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1.5rem var(--page-pad) 1.15rem;
+
+  color: var(--ivory);
+  background: transparent;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Only run the scroll-linked solidify effect in browsers that support
-   animation-timeline. Without this guard, unsupported browsers (Safari)
-   fall back to a 0s duration and jump straight to the "to" keyframe. */
-@supports (animation-timeline: scroll()) {
-  header {
-    animation: header-solidify linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 100vh;
-  }
-}
+.site-header.is-solid {
+  color: var(--wine-deep);
+  background: rgba(255, 255, 243, 0.94);
 
-@keyframes header-solidify {
-  from {
-    background-color: transparent;
-    box-shadow: none;
-    --header-fg: #fffff3;
-  }
-  to {
-    background-color: #fffff3;
-    box-shadow: none;
-    --header-fg: #1a090a;
-  }
+  box-shadow: 0 1px 0 rgba(76, 5, 12, 0.08);
+
+  backdrop-filter: blur(12px);
 }
 
 .name {
   font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--header-fg);
-}
-
-nav {
-  display: flex;
-  gap: 1.75rem;
-}
-
-nav a {
-  color: var(--header-fg);
   text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 400;
-  position: relative;
-  padding-bottom: 2px;
 }
 
-nav a::after {
-  content: '';
+.site-nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.8rem);
+}
+
+.site-nav a {
+  position: relative;
+
+  padding: 0.25rem 0;
+
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.site-nav a::after {
+  content: "";
+
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -3px;
+
   width: 0;
   height: 1px;
-  background: var(--dusty-blue);
+
+  background: currentColor;
+
   transition: width 0.25s ease;
 }
 
-nav a:hover::after {
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
   width: 100%;
 }
 
+
+/* ---------- Hero Image ---------- */
+
 .hero-image-wrap {
   position: relative;
-  height: 100vh;
+
   min-height: 480px;
+  height: 100svh;
+
   overflow: hidden;
+
   background: var(--wine-black);
 }
 
 .hero-image {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+
+  display: block;
+
   object-fit: cover;
   transform-origin: center top;
-  will-change: transform, opacity;
-}
 
-/* Same guard as the header: only animate the shrink/fade in browsers
-   that support scroll-driven animations. Unsupported browsers (Safari)
-   now just show the image static instead of jumping to invisible. */
-@supports (animation-timeline: scroll()) {
-  .hero-image {
-    animation: hero-shrink linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0 100vh;
-  }
-}
-
-@keyframes hero-shrink {
-  from {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-60px) scale(0.75);
-    opacity: 0;
-  }
+  animation: hero-enter 1s ease both;
 }
 
 .hero-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(26, 9, 10, 0) 40%, rgba(26, 9, 10, 0.55) 100%);
+
   pointer-events: none;
-}
-/* ---------- Hero ---------- */
-.hero {
-  padding: clamp(2.5rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 6vw, 4rem);
-  max-width: 780px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 9, 10, 0.12),
+      transparent 42%,
+      rgba(26, 9, 10, 0.52)
+    );
 }
 
-.hero-tag {
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  color: var(--wine-deep);
-  margin: 0 0 0.75rem;
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.hero h1 {
+
+/* ---------- Homepage Intro ---------- */
+
+.home-intro {
+  max-width: 900px;
+
+  padding: clamp(4rem, 10vw, 8rem) var(--page-pad) 3rem;
+
+  margin: 0 auto;
+}
+
+.home-intro h1 {
+  margin: 0;
+
   font-family: var(--serif);
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
   font-weight: 500;
-  font-size: 70px;
-  line-height: 1.12;
-  margin: 0;
-  color: var(--wine-black);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 }
 
+.home-intro p {
+  max-width: 48ch;
 
-.hero-sub {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.6;
+  margin: 1.75rem 0 0;
+
   color: var(--wine-deep);
-  max-width: 46ch;
-  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.55;
 }
 
-.hero-flourish {
-  display: block;
-  margin: 1.5rem 0 1.5rem;
-}
+
+/* ---------- Cards ---------- */
 
 .cards {
   display: grid;
-  grid-template-columns: minmax(0, 480px);
-  justify-content: center;
-  gap: 3rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+
+  max-width: var(--content-width);
+
   margin: 0 auto;
-  padding: 2rem clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vw, 6rem);
+
+  padding: 1rem var(--page-pad) clamp(5rem, 10vw, 8rem);
 }
 
 .card {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  text-decoration: none;
-  color: var(--wine-black);
-  border-radius: 16px;
+
   overflow: hidden;
+
+  color: var(--wine-black);
+  text-decoration: none;
+
   background: #fffef0;
-  border: 1px solid rgba(76, 5, 12, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  border: 1px solid rgba(76, 5, 12, 0.13);
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(26, 9, 10, 0.14);
-  border-color: rgba(76, 5, 12, 0.28);
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-7px);
+
+  border-color: rgba(76, 5, 12, 0.3);
+
+  box-shadow: 0 18px 45px rgba(26, 9, 10, 0.12);
 }
 
 .card-image {
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
+
   background: var(--wine-black);
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
   display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card:hover .card-image img,
+.card:focus-visible .card-image img {
+  transform: scale(1.045);
 }
 
 .card-body {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 1.1rem 1.1rem 1.4rem;
-}
 
-.card-body h2 {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--wine-black);
-}
+  gap: 0.55rem;
 
-.card-body p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #5a3a3d;
-  margin: 0;
+  padding: 1.35rem 1.35rem 1.55rem;
 }
 
 .card-eyebrow {
-  font-size: 0.78rem;
   color: var(--dusty-blue);
-  font-weight: 500;
-  letter-spacing: 0.03em;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
+
+.card h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+
+/* ---------- Subpage Intro ---------- */
+
+.page-intro {
+  max-width: var(--content-width);
+
+  margin: 0 auto;
+
+  padding: clamp(3rem, 8vw, 6.5rem) var(--page-pad) 2rem;
+}
+
+.page-kicker {
+  margin: 0 0 0.75rem;
+
+  color: var(--wine-deep);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-intro h1 {
+  max-width: 14ch;
+
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.page-intro p {
+  max-width: 55ch;
+
+  margin: 1.5rem 0 0;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+/* ---------- Content Pages ---------- */
+
+.page-content {
+  max-width: var(--content-width);
+
+  margin: 0 auto;
+
+  padding: 0 var(--page-pad) 6rem;
+}
+
+.page-content p {
+  max-width: 65ch;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.back-link {
+  display: inline-block;
+
+  margin: 1rem 0 4rem;
+
+  color: var(--wine-deep);
+
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
 
 /* ---------- Footer ---------- */
-footer {
-  padding: 2rem clamp(1.5rem, 5vw, 4rem) 3rem;
-  font-size: 0.82rem;
+
+.site-footer {
+  padding: 2rem var(--page-pad) 3rem;
+
   color: var(--wine-deep);
+
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+
+  border-top: 1px solid rgba(76, 5, 12, 0.1);
 }
+
 
 /* ---------- Responsive ---------- */
-@media (max-width: 560px) {
+
+@media (max-width: 800px) {
   .cards {
-    grid-template-columns: minmax(0, 340px);
-    gap: 2.25rem;
+    grid-template-columns: 1fr;
+    max-width: 540px;
+  }
+
+  .hero-image-wrap {
+    height: 68svh;
+    min-height: 360px;
   }
 }
 
-/* ---------- Reduced motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
+@media (max-width: 480px) {
+  .site-header {
+    padding-top: 1.1rem;
   }
-  header,
-  .hero-image {
-    animation: none !important;
+
+  .site-nav {
+    gap: 0.9rem;
+  }
+
+  .site-nav a {
+    font-size: 0.78rem;
+  }
+
+  .home-intro h1 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
  

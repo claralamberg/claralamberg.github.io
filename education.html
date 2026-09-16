@@ -18,19 +18,131 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8HHXP2M"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <div class="name">Clara Lamberg</div>
-    <nav>
-      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:clara.lamberg@hotmail.se">Contact</a>
+   <!-- Header -->
+
+  <header class="site-header" id="siteHeader">
+
+    <a class="name" href="index.html">
+      Clara Lamberg
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+
+      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8"
+        target="_blank"
+        rel="noopener noreferrer">
+        LinkedIn
+      </a>
+
+      <a href="mailto:clara.lamberg@hotmail.se">
+        Contact
+      </a>
+
     </nav>
+
   </header>
-<div class="hero-image-wrap">
-    <img id="heroImage" class="hero-image" src="education_header.png" alt="Portfolio" />
-    <div class="hero-image-overlay"></div>
-  </div>
-   <footer>
-    <p>Clara Lamberg - Berghs School of Communication</p>
+
+
+  <main>
+
+
+    <!-- Hero -->
+
+    <div class="hero-image-wrap">
+
+      <img
+        class="hero-image"
+        src="education_header.png"
+        alt="Abstract image representing education and learning">
+
+      <div class="hero-image-overlay"></div>
+
+    </div>
+
+
+    <!-- Introduction -->
+
+    <section class="page-intro">
+
+      <p class="page-kicker">
+        Clara Lamberg
+      </p>
+
+      <h1>
+        Education
+      </h1>
+
+      <p>
+        Academic background in marketing, communication and cultural studies.
+      </p>
+
+    </section>
+
+
+    <!-- Content -->
+
+    <section class="page-content">
+
+      <a class="back-link" href="index.html">
+        ← Back to home
+      </a>
+
+
+      <p>
+        My academic journey has shaped the way I approach communication,
+        culture and business. This page will highlight relevant education,
+        courses and academic projects.
+      </p>
+
+
+      <!-- Education Timeline Placeholder -->
+
+      <div style="margin-top: 4rem;">
+
+        <p class="page-kicker">
+          Background
+        </p>
+
+        <h2 style="
+          font-family: var(--serif);
+          font-size: clamp(2rem, 4vw, 3.5rem);
+          font-weight: 500;
+          margin: 0;
+        ">
+          Coming soon
+        </h2>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+    Clara Lamberg · Berghs School of Communication
   </footer>
+
+
+  <!-- Header Scroll Interaction -->
+
+  <script>
+
+    const header = document.getElementById("siteHeader");
+
+    const updateHeader = () => {
+      header.classList.toggle("is-solid", window.scrollY > 24);
+    };
+
+    updateHeader();
+
+    window.addEventListener("scroll", updateHeader, {
+      passive: true
+    });
+
+  </script>
+
 </body>
 </html>
