@@ -435,6 +435,84 @@ img {
   }
 }
 
+/* ---------- Scrolling Marquee ---------- */
+
+.marquee-section {
+  width: 100%;
+  overflow: hidden;
+
+  padding: 2.5rem 0;
+
+  background: var(--wine-deep);
+  color: var(--ivory);
+
+  border-top: 1px solid rgba(255, 255, 243, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 243, 0.12);
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  width: max-content;
+
+  white-space: nowrap;
+
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee-track span {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.marquee-dot {
+  font-family: var(--sans) !important;
+  font-size: 1.4rem !important;
+  opacity: 0.65;
+}
+
+
+/* Infinite scrolling animation */
+
+@keyframes marquee-scroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* Pause animation when hovering */
+
+.marquee-section:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+}
 
 /* ---------- Reduced Motion ---------- */
 
