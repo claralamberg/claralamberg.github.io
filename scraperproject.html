@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8HHXP2M');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Scraper</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8HHXP2M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Scraper — Clara Lamberg</title>
+
+    <!-- SAMMA CSS SOM RESTEN AV PORTFOLION -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+        <a href="index.html" class="logo">Clara Lamberg</a>
+
+        <nav class="navigation">
+            <a href="portfolio.html" class="active">Portfolio</a>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         PROJECT INTRO
+    ========================== -->
+
+    <main>
+
+        <section class="scraper-intro">
+
+            <p class="eyebrow">01 / Web Scraping</p>
+
+            <h1>
+                Turning a website
+                into data.
+            </h1>
+
+            <p class="scraper-intro-text">
+                A small web scraping project where I created a
+                JavaScript scraper to collect structured product
+                information from Artilleriet's New Arrivals page.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             PROCESS
+        ========================== -->
+
+        <section class="scraper-process">
+
+            <div class="scraper-process-header">
+                <p class="eyebrow">The process</p>
+
+                <h2>
+                    From website<br>
+                    to dataset.
+                </h2>
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-item">
+                    <span>01</span>
+                    <h3>Fetch</h3>
+                    <p>
+                        The scraper accesses the New Arrivals
+                        page and retrieves the HTML.
+                    </p>
+                </div>
+
+                <div class="process-item">
+                    <span>02</span>
+                    <h3>Parse</h3>
+                    <p>
+                        The HTML is analysed to identify
+                        individual products.
+                    </p>
+                </div>
+
+                <div class="process-item">
+                    <span>03</span>
+                    <h3>Extract</h3>
+                    <p>
+                        Product name, brand, price, URL and
+                        new-arrival status are collected.
+                    </p>
+                </div>
+
+                <div class="process-item">
+                    <span>04</span>
+                    <h3>Save</h3>
+                    <p>
+                        The collected information is structured
+                        and saved as a text dataset.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DATA OVERVIEW
+        ========================== -->
+
+        <section class="scraper-overview">
+
+            <div class="scraper-stat">
+                <strong>71</strong>
+                <span>Products collected</span>
+            </div>
+
+            <div class="scraper-stat">
+                <strong>5</strong>
+                <span>Data fields</span>
+            </div>
+
+            <div class="scraper-stat">
+                <strong>01</strong>
+                <span>Website scraped</span>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCRAPED DATA
+        ========================== -->
+
+        <section class="scraped-data">
+
+            <div class="scraped-data-intro">
+
+                <div>
+                    <p class="eyebrow">The result</p>
+
+                    <h2>
+                        Scraped<br>
+                        products.
+                    </h2>
+                </div>
+
+                <p>
+                    The scraper transformed the product listings
+                    into structured data containing the product
+                    name, brand, price, URL and new-arrival status.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUCT GRID -->
+
+            <div class="product-grid">
+
+
+                <!-- PRODUCT 01 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>01</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Nordic Knots
+                        </p>
+
+                        <h3>
+                            Dancing Flower - Dusty Blue
+                        </h3>
+
+                        <p class="product-price">
+                            From 13 950 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 02 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>02</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Cappelen Dimyr
+                        </p>
+
+                        <h3>
+                            Silk Cushion - Soft Yellow
+                        </h3>
+
+                        <p class="product-price">
+                            2 300 SEK
+                        </p>
+                    </div>
+
+
+                </article>
+
+
+                <!-- PRODUCT 03 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>03</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Artilleriet Ateliers
+                        </p>
+
+                        <h3>
+                            Studio Table - Mahogany
+                        </h3>
+
+                        <p class="product-price">
+                            From 116 100 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 04 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>04</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Sika Design
+                        </p>
+
+                        <h3>
+                            Teddy Chair with Cushion Little Magnolia
+                        </h3>
+
+                        <p class="product-price">
+                            19 970 SEK
+                        </p>
+                    </div>
+
+
+                </article>
+
+
+                <!-- PRODUCT 05 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>05</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Hay
+                        </p>
+
+                        <h3>
+                            La Pittura Bowl - Spirale
+                        </h3>
+
+                        <p class="product-price">
+                            320 SEK
+                        </p>
+                    </div>
+
+
+                </article>
+
+
+                <!-- PRODUCT 06 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>06</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            De La Espada
+                        </p>
+
+                        <h3>
+                            Trio Side Table
+                        </h3>
+
+                        <p class="product-price">
+                            From 24 450 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 07 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>07</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Porta Romana
+                        </p>
+
+                        <h3>
+                            Scallop Shell Wall Light - Small
+                        </h3>
+
+                        <p class="product-price">
+                            35 360 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 08 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>08</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Hay
+                        </p>
+
+                        <h3>
+                            La Pittura Trivet - Stained Glass
+                        </h3>
+
+                        <p class="product-price">
+                            480 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 09 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>09</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Cappelen Dimyr
+                        </p>
+
+                        <h3>
+                            Silk Cushion - Dusty Pink
+                        </h3>
+
+                        <p class="product-price">
+                            2 300 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 10 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>10</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            De La Espada
+                        </p>
+
+                        <h3>
+                            Throne Sofa
+                        </h3>
+
+                        <p class="product-price">
+                            From 176 330 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 11 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>11</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Hay
+                        </p>
+
+                        <h3>
+                            La Pittura Cup - Spiralise
+                        </h3>
+
+                        <p class="product-price">
+                            320 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 12 -->
+
+                <article class="scraped-product">
+
+                    <div class="product-top">
+                        <span>12</span>
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-brand">
+                            Hay
+                        </p>
+
+                        <h3>
+                            La Pittura Plate - Klokkeblomst - 24 cm
+                        </h3>
+
+                        <p class="product-price">
+                            560 SEK
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+<div class="full-result">
+
+    <p>
+        The complete dataset contains 71 collected products.
+    </p>
+
+    <a href="#full-dataset" class="project-button">
+        View full dataset
+        <span>↓</span>
+    </a>
+
+</div>
+
+            <!-- =========================
+     FULL DATASET: Result
+========================== -->
+
+<section class="full-dataset" id="full-dataset">
+
+    <div class="full-dataset-header">
+
+        <h2>
+            Full dataset
+        </h2>
+ <p class="eyebrow"> Result</p>
+    </div>
+
+
+    <div class="dataset-container">
+
+        <pre>
+Namn: Dancing Flower - Dusty Blue
+Märke: Nordic Knots
+Pris: Från 13 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/dancing-flower-dusty-blue
+Nyhet: Ja
+
+Namn: Silk Cushion - Soft Yellow
+Märke: Cappelen Dimyr
+Pris: 2 300 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/silk-cushion-soft-yellow
+Nyhet: Ja
+
+Namn: Studio Table - Mahogany
+Märke: Artilleriet Ateliers
+Pris: Från 116 100 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/studio-table-mahogany
+Nyhet: Ja
+
+Namn: Teddy Chair with Cushion Little Magnolia
+Märke: Sika Design
+Pris: 19 970 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/teddy-chair-with-cushion-little-magnolia
+Nyhet: Ja
+
+Namn: La Pittura Bowl - Spirale
+Märke: Hay
+Pris: 320 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-bowl-spirale
+Nyhet: Ja
+
+Namn: Trio Side Table
+Märke: De La Espada
+Pris: Från 24 450 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/trio-side-table
+Nyhet: Ja
+
+Namn: Scallop Shell Wall Light - Small
+Märke: Porta Romana
+Pris: 35 360 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/scallop-shell-wall-light-small
+Nyhet: Ja
+
+Namn: La Pittura Trivet - Stained Glass
+Märke: Hay
+Pris: 480 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-trivet-stained-glass
+Nyhet: Ja
+
+Namn: Silk Cushion - Dusty Pink
+Märke: Cappelen Dimyr
+Pris: 2 300 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/silk-cushion-dusty-pink
+Nyhet: Ja
+
+Namn: Throne Sofa
+Märke: De La Espada
+Pris: Från 176 330 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/throne-sofa
+Nyhet: Ja
+
+Namn: La Pittura Cup - Spiralise
+Märke: Hay
+Pris: 320 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-cup-spiralise
+Nyhet: Ja
+
+Namn: La Pittura Plate - Klokkeblomst - 24 cm
+Märke: Hay
+Pris: 560 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-plate-klokkeblomst-24-cm
+Nyhet: Ja
+
+Namn: Mamma Sofa
+Märke: Artilleriet Ateliers
+Pris: Från 91 300 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/mamma-sofa-mohair
+Nyhet: Ja
+
+Namn: La Pittura Cup - Postage Stamp
+Märke: Hay
+Pris: 320 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-cup-postage-stamp
+Nyhet: Ja
+
+Namn: 54 Chair
+Märke: Dagmar
+Pris: Från 88 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/54-chair-skin
+Nyhet: Ja
+
+Namn: Komet Table Lamp - Polished Brass
+Märke: Artilleriet Ateliers
+Pris: 8 600 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/komet-table-lamp-polished-brass
+Nyhet: Nej
+
+Namn: Antithesis Intense Body Cleanser 180 ml
+Märke: Aesop
+Pris: Från 380 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/antithesis-intense-body-cleanser-180-ml
+Nyhet: Nej
+
+Namn: La Pittura Plate - Crocus - 24 cm
+Märke: Hay
+Pris: 560 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/la-pittura-plate-crocus-24-cm
+Nyhet: Ja
+
+Namn: Canvas - Terracotta
+Märke: Nordic Knots
+Pris: Från 6 750 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/canvas-terracotta
+Nyhet: Ja
+
+Namn: Komet Floor Lamp - Polished Brass
+Märke: Artilleriet Ateliers
+Pris: 13 800 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/komet-floor-lamp-polished-brass
+Nyhet: Nej
+
+Namn: Porcelain Tapestry no.07
+Märke: Cappelen Dimyr
+Pris: 10 100 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/porcelain-tapestry-no07
+Nyhet: Nej
+
+Namn: Mary's Chair
+Märke: De La Espada
+Pris: Från 26 920 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/marys-chair
+Nyhet: Ja
+
+Namn: Blood Spider Orchids - EdP 75 ml
+Märke: Régime des Fleurs
+Pris: 2 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/blood-spider-orchids-edp-75-ml
+Nyhet: Nej
+
+Namn: Maya Placemat - Zenzero
+Märke: Society
+Pris: 820 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/maya-placemat-zenzero
+Nyhet: Nej
+
+Namn: Lantern Pyramid Pendant - Small
+Märke: Workstead
+Pris: Från 116 200 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/lantern-pyramid-pendant-small
+Nyhet: Nej
+
+Namn: Savanna - Jute/Cream
+Märke: Nordic Knots
+Pris: Från 9 750 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/savanna-jutecream
+Nyhet: Ja
+
+Namn: Wall Street Duvet Cover Oxford - 150x210
+Märke: Magniberg
+Pris: 1 860 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/wall-street-duvet-cover-oxford-150x210-skin
+Nyhet: Nej
+
+Namn: Axelle Delhaye - Flower Pot Large
+Märke: Serax
+Pris: 2 480 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/axelle-delhaye-flower-pot-large
+Nyhet: Nej
+
+Namn: Wildly Fig - EdP 75 ml
+Märke: Régime des Fleurs
+Pris: 2 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/wildly-fig-edp-75-ml
+Nyhet: Nej
+
+Namn: No.30
+Märke: Cappelen Dimyr
+Pris: Från 27 980 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/no30
+Nyhet: Nej
+
+Namn: Herring Carafe - Dark Green
+Märke: Serax
+Pris: 490 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/herring-carafe-dark-green
+Nyhet: Nej
+
+Namn: N-DC07 Dining Chair
+Märke: Karimoku Case
+Pris: Från 25 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/n-dc07-dining-chair
+Nyhet: Nej
+
+Namn: Porcelain Tapestry no.08
+Märke: Cappelen Dimyr
+Pris: Från 8 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/porcelain-tapestry-no08
+Nyhet: Nej
+
+Namn: Lotus Charm Floor Lamp - Huo
+Märke: Taiwan-Lantern
+Pris: 121 500 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/lotus-charm-floor-lamp-huo
+Nyhet: Nej
+
+Namn: Lantern Pyramid Sconce
+Märke: Workstead
+Pris: Från 44 800 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/lantern-pyramid-sconce
+Nyhet: Nej
+
+Namn: Wall Street Pillow Case Oxford - 50 x 60
+Märke: Magniberg
+Pris: 540 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/wall-street-pillow-case-oxford-50-x-60
+Nyhet: Nej
+
+Namn: Plum Charm Table Lamp - Mu
+Märke: Taiwan-Lantern
+Pris: 67 500 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/plum-charm-table-lamp-mu
+Nyhet: Nej
+
+Namn: Silhouette Cereal Bowl
+Märke: Serax
+Pris: 220 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/silhouette-cereal-bowl
+Nyhet: Nej
+
+Namn: Colonnade No.16
+Märke: Cappelen Dimyr
+Pris: 10 450 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/colonnade-no16
+Nyhet: Nej
+
+Namn: Lotus Charm Floor Lamp - Jin
+Märke: Taiwan-Lantern
+Pris: 121 500 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/lotus-charm-floor-lamp-jin
+Nyhet: Nej
+
+Namn: Silhouette Serving Bowl - 25,5 cm
+Märke: Serax
+Pris: 630 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/silhouette-serving-bowl-255-cm
+Nyhet: Nej
+
+Namn: Wall Street Pillow Case Oxford - 50 x 60
+Märke: Magniberg
+Pris: 540 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/wall-street-pillow-case-oxford-50-x-60-71003250600219skin
+Nyhet: Nej
+
+Namn: Scallop Side Plate
+Märke: Bordallo Pinheiro
+Pris: 240 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/scallop-side-plate
+Nyhet: Nej
+
+Namn: Colonnade No.14
+Märke: Cappelen Dimyr
+Pris: 10 450 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/colonnade-no14
+Nyhet: Nej
+
+Namn: Wall Street Duvet Cover Oxford - 150x210
+Märke: Magniberg
+Pris: 1 860 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/wall-street-duvet-cover-oxford-150x210
+Nyhet: Nej
+
+Namn: Plum Charm Table Lamp - Shui
+Märke: Taiwan-Lantern
+Pris: 67 500 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/plum-charm-table-lamp-shui
+Nyhet: Nej
+
+Namn: R 513 Armchair
+Märke: Gervasoni
+Pris: Från 19 920 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/r-513-armchair
+Nyhet: Nej
+
+Namn: Studio Linen Bedspread - 265x280 cm
+Märke: Nordic Knots
+Pris: 3 850 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/studio-linen-bedspread-265x280-cm
+Nyhet: Nej
+
+Namn: Como - Cinnamon
+Märke: Artilleriet Ateliers
+Pris: 11 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/como-cinnamon
+Nyhet: Nej
+
+Namn: Arc Floor Lamp
+Märke: Artilleriet Ateliers
+Pris: 15 580 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/arc-floor-lamp-1
+Nyhet: Nej
+
+Namn: Como - Chocolate
+Märke: Artilleriet Ateliers
+Pris: 11 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/como-chocolate
+Nyhet: Nej
+
+Namn: Como - Oat
+Märke: Artilleriet Ateliers
+Pris: 11 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/como-oat
+Nyhet: Nej
+
+Namn: Sateen Duvet Cover
+Märke: Nordic Knots
+Pris: Från 2 200 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/sateen-duvet-cover
+Nyhet: Nej
+
+Namn: Timna Coupe - Latte
+Märke: (okänt)
+Pris: 4 980 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/timna-coupe-latte
+Nyhet: Nej
+
+Namn: Como - Powder
+Märke: Artilleriet Ateliers
+Pris: 11 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/como-powder
+Nyhet: Nej
+
+Namn: Como - Amber
+Märke: Artilleriet Ateliers
+Pris: 11 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/como-amber
+Nyhet: Nej
+
+Namn: Peggy Mini Incense Holder
+Märke: Astier de Villatte
+Pris: 890 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/peggy-mini-incense-holder
+Nyhet: Nej
+
+Namn: Tradition 03 – Beige
+Märke: Nordic Knots
+Pris: Från 2 950 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/tradition-03-beige
+Nyhet: Nej
+
+Namn: Leopard Pillow Case 50x50 cm
+Märke: Nordic Knots
+Pris: Från 1 900 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/leopard-pillow-case-50x50
+Nyhet: Nej
+
+Namn: Timna Vase Extra Short - Aged Iron
+Märke: (okänt)
+Pris: 5 480 SEK
+Länk: https://artilleriet.se/sv/new-arrivals/timna-vase-extra-short-aged-iron
+Nyhet: Nej
+        </pre>
+
+    </div>
+
+</section>
+
+        
+
+                   <!-- =========================
+     FULL DATASET: SCRAPE
+========================== -->
+
+<section class="full-dataset" id="full-dataset">
+
+    <div class="full-dataset-header">
+
+        <h2>
+            Full dataset
+        </h2>
+ <p class="eyebrow"> Scrape</p>
+    </div>
+
+
+    <div class="dataset-container">
+
+        <pre>
+// scraper.js
+//
+// Skrapar https://artilleriet.se/sv/new-arrivals och sparar produkterna
+// (varumärke, namn, pris, länk) i resultat.txt — ett fält per rad,
+// med en tom rad mellan varje produkt.
+//
+// Körs med: node scraper.js
+// Kräver Node 18+ (inbyggt fetch) och paketet "cheerio" (npm install cheerio)
+
+const fs = require("fs/promises");
+const cheerio = require("cheerio");
+
+const PAGE_URL = "https://artilleriet.se/sv/new-arrivals";
+const OUTPUT_FILE = "resultat.txt";
+
+// En vanlig webbläsar-User-Agent så sidan inte svarar 403
+const HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+  "Accept-Language": "sv-SE,sv;q=0.9,en;q=0.8",
+};
+
+function cleanText(text) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+async function fetchHtml(url) {
+  const response = await fetch(url, { headers: HEADERS });
+
+  if (!response.ok) {
+    throw new Error(
+      `Misslyckades att hämta sidan: ${response.status} ${response.statusText}`
+    );
+  }
+
+  return response.text();
+}
+
+function parseProducts(html) {
+  const $ = cheerio.load(html);
+  const products = [];
+
+  $(".ProductGrid-item").each((_, el) => {
+    const item = $(el);
+
+    const brand = cleanText(item.find(".ProductGrid-itemBrand").first().text());
+    const name = cleanText(item.find(".ProductGrid-itemName").first().text());
+    const price = cleanText(item.find(".ProductGrid-itemPrice").first().text());
+
+    const relativeLink = item.find("a.ProductGrid-itemDesc").first().attr("href");
+    const link = relativeLink ? new URL(relativeLink, PAGE_URL).toString() : "";
+
+    const isNew =
+      item.find(".ProductGrid-itemSticker").filter((_, s) => {
+        return cleanText($(s).text()) === "Nyhet";
+      }).length > 0;
+
+    // Hoppa över tomma/trasiga objekt (t.ex. om selektorerna inte matchar)
+    if (!name && !brand) {
+      return;
+    }
+
+    products.push({
+      brand: brand || "(okänt)",
+      name: name || "(okänt)",
+      price: price || "(okänt)",
+      link: link || "(okänd)",
+      isNew,
+    });
+  });
+
+  return products;
+}
+
+function formatProducts(products) {
+  return products
+    .map((p) => {
+      const lines = [
+        `Namn: ${p.name}`,
+        `Märke: ${p.brand}`,
+        `Pris: ${p.price}`,
+        `Länk: ${p.link}`,
+        `Nyhet: ${p.isNew ? "Ja" : "Nej"}`,
+      ];
+      return lines.join("\n");
+    })
+    .join("\n\n");
+}
+
+async function main() {
+  console.log(`Hämtar ${PAGE_URL} ...`);
+  const html = await fetchHtml(PAGE_URL);
+
+  console.log("Tolkar HTML och extraherar produkter ...");
+  const products = parseProducts(html);
+
+  if (products.length === 0) {
+    console.warn(
+      "Hittade inga produkter. Sidans struktur kan ha ändrats, " +
+        "eller så krävs JavaScript-rendering för att se innehållet."
+    );
+  }
+
+  const output = formatProducts(products);
+  await fs.writeFile(OUTPUT_FILE, output, "utf-8");
+
+  console.log(`Klart! ${products.length} produkter sparade i ${OUTPUT_FILE}.`);
+}
+
+main().catch((err) => {
+  console.error("Ett fel uppstod:", err.message);
+  process.exit(1);
+});
+        </pre>
+
+    </div>
+
+</section>
+</section>
+
+
+    <!-- =========================
+         MARQUEE
+    ========================== -->
+
+    <section class="marquee-section" aria-label="Scrolling statement">
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <span>GROWTH WITH MEANING</span>
+                <span class="marquee-dot">✦</span>
+
+                <span>CREATIVE STRATEGY</span>
+                <span class="marquee-dot">✦</span>
+
+                <span>DATA &amp; DIGITAL</span>
+                <span class="marquee-dot">✦</span>
+
+                <span>GROWTH WITH MEANING</span>
+                <span class="marquee-dot">✦</span>
+
+                <span>CREATIVE STRATEGY</span>
+                <span class="marquee-dot">✦</span>
+
+                <span>DATA &amp; DIGITAL</span>
+                <span class="marquee-dot">✦</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Clara Lamberg
+            </p>
+
+            <p>
+                Growth Marketing · Creative Strategy
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

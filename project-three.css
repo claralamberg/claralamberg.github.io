@@ -1,0 +1,996 @@
+/* ==================================================
+   FASHION FLIGHT FINDER
+   PROJECT 03
+================================================== */
+
+
+/* =========================
+   INTRO
+========================= */
+
+.fashion-intro {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 6rem;
+
+    padding: 9rem var(--page-pad) 8rem;
+
+    align-items: center;
+}
+
+.fashion-intro-content {
+    max-width: 800px;
+}
+
+.fashion-intro h1 {
+    margin: 1rem 0 2rem;
+
+    font-family: var(--serif);
+    font-size: clamp(4.5rem, 9vw, 9rem);
+    font-weight: 400;
+    line-height: 0.87;
+
+    color: var(--wine-deep);
+}
+
+.fashion-tagline {
+    margin: 0 0 2rem;
+
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    font-style: italic;
+    line-height: 1.05;
+
+    color: var(--wine-light);
+}
+
+.fashion-intro-text {
+    max-width: 580px;
+
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   HERO PROTOTYPE
+========================= */
+
+.hero-prototype {
+    background: var(--wine-deep);
+    color: var(--ivory);
+
+    padding: 1.5rem;
+
+    box-shadow: 20px 20px 0 var(--paper);
+}
+
+.prototype-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1.2rem;
+
+    border-bottom: 1px solid rgba(245, 240, 232, 0.25);
+
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+}
+
+.prototype-search {
+    padding: 2.5rem 0;
+}
+
+.prototype-search p {
+    margin: 0 0 0.7rem;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    opacity: 0.65;
+}
+
+.search-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(245, 240, 232, 0.35);
+
+    font-family: var(--serif);
+    font-size: 1.4rem;
+}
+
+.prototype-month {
+    margin-bottom: 1rem;
+
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    opacity: 0.55;
+}
+
+.prototype-result {
+    display: grid;
+    grid-template-columns: 35px 1fr auto;
+    gap: 1rem;
+
+    padding: 1.3rem 0;
+
+    border-top: 1px solid rgba(245, 240, 232, 0.2);
+}
+
+.prototype-result-number {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    opacity: 0.55;
+}
+
+.prototype-result-info h3 {
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.prototype-result-info p,
+.prototype-result-info small {
+    display: block;
+
+    margin: 0.15rem 0 0;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+}
+
+.prototype-result-info small {
+    opacity: 0.55;
+}
+
+.prototype-price {
+    text-align: right;
+}
+
+.prototype-price span {
+    display: block;
+
+    font-family: var(--sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+
+    opacity: 0.55;
+}
+
+.prototype-price strong {
+    display: block;
+
+    margin-top: 0.2rem;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section-heading {
+    max-width: 900px;
+    margin-bottom: 5rem;
+}
+
+.section-heading h2 {
+    margin: 1rem 0 0;
+
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.9;
+
+    color: var(--wine-deep);
+}
+
+.section-description {
+    max-width: 500px;
+
+    margin-top: 2rem;
+
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   DATA SOURCES
+========================= */
+
+.data-sources {
+    padding: 9rem var(--page-pad);
+
+    background: var(--paper);
+}
+
+.data-flow {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    align-items: stretch;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.source-card {
+    padding: 3rem;
+
+    background: var(--ivory);
+
+    border: 1px solid rgba(75, 36, 53, 0.15);
+}
+
+.source-number {
+    margin-bottom: 4rem;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+.source-card h3 {
+    margin: 0 0 1.2rem;
+
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+
+    color: var(--wine-deep);
+}
+
+.source-card p {
+    max-width: 400px;
+
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    color: var(--text-dark);
+}
+
+.source-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    margin-top: 2rem;
+}
+
+.source-data span {
+    padding: 0.5rem 0.8rem;
+
+    border: 1px solid rgba(75, 36, 53, 0.2);
+
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+}
+
+.data-connection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--serif);
+    font-size: 3rem;
+
+    color: var(--wine-deep);
+}
+
+.mashup-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 4rem;
+
+    text-align: center;
+}
+
+.mashup-result > span {
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+}
+
+.mashup-result strong {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 400;
+
+    color: var(--wine-deep);
+}
+
+.mashup-result p {
+    margin-top: 0.5rem;
+
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   MASHUP
+========================= */
+
+.mashup-section {
+    padding: 9rem var(--page-pad);
+}
+
+.mashup-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.mashup-step {
+    padding: 2rem 0;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.3);
+}
+
+.step-number {
+    display: block;
+
+    margin-bottom: 3rem;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+.mashup-step h3 {
+    margin: 0 0 1rem;
+
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    color: var(--wine-deep);
+}
+
+.mashup-step > p {
+    max-width: 350px;
+
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+.mini-example {
+    margin-top: 2rem;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.15);
+}
+
+.mini-example div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 0;
+
+    border-bottom: 1px solid rgba(75, 36, 53, 0.15);
+}
+
+.mini-example span {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+
+    color: var(--muted);
+}
+
+.mini-example strong {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+
+/* =========================
+   DEAL SCORE
+========================= */
+
+.deal-score-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+
+    padding: 9rem var(--page-pad);
+
+    background: var(--wine-deep);
+    color: var(--ivory);
+}
+
+.deal-score-intro h2 {
+    margin: 1rem 0 2rem;
+
+    font-family: var(--serif);
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: 0.85;
+}
+
+.deal-score-intro > p {
+    max-width: 500px;
+
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.7;
+
+    opacity: 0.8;
+}
+
+.deal-score-intro small {
+    display: block;
+
+    margin-top: 2rem;
+
+    max-width: 450px;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    line-height: 1.5;
+
+    opacity: 0.5;
+}
+
+.deal-card {
+    align-self: center;
+
+    padding: 2rem;
+
+    background: var(--ivory);
+    color: var(--wine-deep);
+}
+
+.deal-card-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1rem;
+
+    border-bottom: 1px solid rgba(75, 36, 53, 0.2);
+
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+
+.deal-card-main {
+    padding: 3rem 0;
+}
+
+.deal-card-main p {
+    margin: 0 0 0.5rem;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.deal-card-main h3 {
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.deal-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 1.5rem 0;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.2);
+    border-bottom: 1px solid rgba(75, 36, 53, 0.2);
+}
+
+.deal-price span {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+}
+
+.deal-price strong {
+    font-family: var(--sans);
+    font-size: 1rem;
+}
+
+.deal-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 2rem;
+}
+
+.deal-score span {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.deal-score strong {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.deal-note {
+    margin: 2rem 0 0;
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    line-height: 1.6;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   PAPER PROTOTYPE
+========================= */
+
+.paper-section {
+    padding: 9rem var(--page-pad);
+}
+
+.paper-prototype {
+    max-width: 950px;
+    margin: 0 auto;
+
+    padding: 3rem;
+
+    background: var(--paper);
+
+    border: 1px solid rgba(75, 36, 53, 0.25);
+
+    box-shadow: 15px 15px 0 rgba(75, 36, 53, 0.08);
+}
+
+.paper-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1.5rem;
+
+    border-bottom: 1px solid rgba(75, 36, 53, 0.25);
+
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+}
+
+.paper-header span {
+    opacity: 0.5;
+}
+
+.paper-search {
+    padding: 3rem 0 2rem;
+}
+
+.paper-search label,
+.paper-filters span,
+.paper-results-heading {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+}
+
+.paper-input {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 0.8rem;
+    padding: 1.2rem;
+
+    background: var(--ivory);
+
+    border: 1px solid rgba(75, 36, 53, 0.2);
+
+    font-family: var(--serif);
+    font-size: 1.5rem;
+}
+
+.paper-filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    padding: 1.5rem 0;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.2);
+    border-bottom: 1px solid rgba(75, 36, 53, 0.2);
+}
+
+.paper-filters div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.paper-filters strong {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.paper-results {
+    padding-top: 2rem;
+}
+
+.paper-results-heading {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1rem;
+
+    opacity: 0.5;
+}
+
+.paper-result {
+    display: grid;
+    grid-template-columns: 50px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+
+    padding: 1.5rem 0;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.2);
+}
+
+.paper-result-number {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+}
+
+.paper-result-city h3 {
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.paper-result-city p {
+    margin: 0.2rem 0;
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+}
+
+.paper-result-city small {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+
+    color: var(--muted);
+}
+
+.paper-result-price {
+    text-align: right;
+}
+
+.paper-result-price span {
+    display: block;
+
+    font-family: var(--sans);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+
+    color: var(--muted);
+}
+
+.paper-result-price strong {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters-section {
+    padding: 9rem var(--page-pad);
+
+    background: var(--paper);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.filter-group {
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.3);
+}
+
+.filter-group > span {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 1.5rem;
+}
+
+.filter-options span {
+    padding: 0.9rem 0;
+
+    border-bottom: 1px solid rgba(75, 36, 53, 0.12);
+
+    font-family: var(--serif);
+    font-size: 1.5rem;
+
+    color: var(--wine-deep);
+}
+
+
+/* =========================
+   USER JOURNEY
+========================= */
+
+.journey-section {
+    padding: 9rem var(--page-pad);
+}
+
+.journey {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.journey-step {
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(75, 36, 53, 0.3);
+}
+
+.journey-step span {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+
+    color: var(--muted);
+}
+
+.journey-step h3 {
+    margin: 1.5rem 0 0.5rem;
+
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+
+    color: var(--wine-deep);
+}
+
+.journey-step p {
+    margin: 0;
+
+    font-family: var(--sans);
+    font-size: 0.75rem;
+
+    color: var(--muted);
+}
+
+.journey-arrow {
+    font-family: var(--serif);
+    font-size: 2rem;
+
+    color: var(--wine-light);
+}
+
+
+/* =========================
+   FINAL SUMMARY
+========================= */
+
+.fashion-summary {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 7rem;
+
+    padding: 9rem var(--page-pad);
+
+    background: var(--paper);
+}
+
+.fashion-summary h2 {
+    margin: 1rem 0 0;
+
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 0.9;
+
+    color: var(--wine-deep);
+}
+
+.fashion-summary-text {
+    max-width: 550px;
+}
+
+.fashion-summary-text p {
+    margin: 0 0 1.5rem;
+
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   BACK TO PORTFOLIO
+========================= */
+
+.project-back {
+    padding: 5rem var(--page-pad);
+
+    text-align: center;
+}
+
+.project-back .project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    color: var(--wine-deep);
+    text-decoration: none;
+
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    border-bottom: 1px solid var(--wine-deep);
+
+    padding-bottom: 0.5rem;
+
+    transition:
+        gap 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.project-back .project-button:hover {
+    gap: 1.2rem;
+    opacity: 0.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .fashion-intro {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .data-flow {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .data-connection {
+        height: 50px;
+    }
+
+    .mashup-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .deal-score-section {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .journey-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+    }
+
+    .fashion-summary {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .fashion-intro {
+        padding-top: 7rem;
+    }
+
+    .prototype-result {
+        grid-template-columns: 25px 1fr;
+    }
+
+    .prototype-price {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .paper-prototype {
+        padding: 1.5rem;
+    }
+
+    .paper-filters {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .paper-result {
+        grid-template-columns: 30px 1fr;
+    }
+
+    .paper-result-price {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .source-card {
+        padding: 2rem;
+    }
+
+}

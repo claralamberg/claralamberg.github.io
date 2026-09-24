@@ -1,0 +1,114 @@
+// scraper.js
+//
+// Skrapar https://artilleriet.se/sv/new-arrivals och sparar produkterna
+// (varumärke, namn, pris, länk) i resultat.txt — ett fält per rad,
+// med en tom rad mellan varje produkt.
+//
+// Körs med: node scraper.js
+// Kräver Node 18+ (inbyggt fetch) och paketet "cheerio" (npm install cheerio)
+
+const fs = require("fs/promises");
+const cheerio = require("cheerio");
+
+const PAGE_URL = "https://artilleriet.se/sv/new-arrivals";
+const OUTPUT_FILE = "resultat.txt";
+
+// En vanlig webbläsar-User-Agent så sidan inte svarar 403
+const HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+  "Accept-Language": "sv-SE,sv;q=0.9,en;q=0.8",
+};
+
+function cleanText(text) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+async function fetchHtml(url) {
+  const response = await fetch(url, { headers: HEADERS });
+
+  if (!response.ok) {
+    throw new Error(
+      `Misslyckades att hämta sidan: ${response.status} ${response.statusText}`
+    );
+  }
+
+  return response.text();
+}
+
+function parseProducts(html) {
+  const $ = cheerio.load(html);
+  const products = [];
+
+  $(".ProductGrid-item").each((_, el) => {
+    const item = $(el);
+
+    const brand = cleanText(item.find(".ProductGrid-itemBrand").first().text());
+    const name = cleanText(item.find(".ProductGrid-itemName").first().text());
+    const price = cleanText(item.find(".ProductGrid-itemPrice").first().text());
+
+    const relativeLink = item.find("a.ProductGrid-itemDesc").first().attr("href");
+    const link = relativeLink ? new URL(relativeLink, PAGE_URL).toString() : "";
+
+    const isNew =
+      item.find(".ProductGrid-itemSticker").filter((_, s) => {
+        return cleanText($(s).text()) === "Nyhet";
+      }).length > 0;
+
+    // Hoppa över tomma/trasiga objekt (t.ex. om selektorerna inte matchar)
+    if (!name && !brand) {
+      return;
+    }
+
+    products.push({
+      brand: brand || "(okänt)",
+      name: name || "(okänt)",
+      price: price || "(okänt)",
+      link: link || "(okänd)",
+      isNew,
+    });
+  });
+
+  return products;
+}
+
+function formatProducts(products) {
+  return products
+    .map((p) => {
+      const lines = [
+        `Namn: ${p.name}`,
+        `Märke: ${p.brand}`,
+        `Pris: ${p.price}`,
+        `Länk: ${p.link}`,
+        `Nyhet: ${p.isNew ? "Ja" : "Nej"}`,
+      ];
+      return lines.join("\n");
+    })
+    .join("\n\n");
+}
+
+async function main() {
+  console.log(`Hämtar ${PAGE_URL} ...`);
+  const html = await fetchHtml(PAGE_URL);
+
+  console.log("Tolkar HTML och extraherar produkter ...");
+  const products = parseProducts(html);
+
+  if (products.length === 0) {
+    console.warn(
+      "Hittade inga produkter. Sidans struktur kan ha ändrats, " +
+        "eller så krävs JavaScript-rendering för att se innehållet."
+    );
+  }
+
+  const output = formatProducts(products);
+  await fs.writeFile(OUTPUT_FILE, output, "utf-8");
+
+  console.log(`Klart! ${products.length} produkter sparade i ${OUTPUT_FILE}.`);
+}
+
+main().catch((err) => {
+  console.error("Ett fel uppstod:", err.message);
+  process.exit(1);
+});

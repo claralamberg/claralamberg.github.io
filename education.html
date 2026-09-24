@@ -10,7 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <title></title>
+  <title>Education</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -86,35 +86,145 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="back-link" href="index.html">
         ← Back to home
       </a>
+      <!-- Education Journey -->
+
+    <section class="education-journey">
+
+      <!-- Berghs School of Communication -->
+
+      <article class="education-block reveal">
+
+        <div class="education-number">
+          01
+        </div>
+
+        <div class="education-content">
+
+          <p class="education-kicker">
+            Stockholm · Sweden
+          </p>
+
+          <h2>
+            Berghs SOC
+          </h2>
+          <p class="education-title">
+            Growth Marketing 
+          </p>
+
+          <p class="education-description">
+            Berghs School of Communication represents my foundation in
+            communication, creative strategy and contemporary marketing.
+            A place where ideas meet real-world challenges and where
+            strategic thinking is developed through collaboration and practice.
+          </p>
+
+          <a
+  class="education-link"
+  href="https://www.berghs.se/program/growth-marketing/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Explore Berghs School of Communication
+  <span>↗</span>
+</a>
+
+        </div>
+
+      </article>
 
 
-      <p>
-        My academic journey has shaped the way I approach communication,
-        culture and business. This page will highlight relevant education,
-        courses and academic projects.
-      </p>
+      <!-- Lund University -->
+
+      <article class="education-block reveal">
+
+        <div class="education-number">
+          02
+        </div>
+
+        <div class="education-content">
+
+          <p class="education-kicker">
+            Lund · Sweden
+          </p>
+
+          <h2>
+            Lund<br>
+            University
+          </h2>
+
+          <p class="education-description">
+            My studies at Lund University have contributed to a broader
+            academic perspective and a deeper understanding of society,
+            culture and the structures that shape human behaviour.
+          </p>
+
+          <a
+  class="education-link"
+  href="https://www.lu.se/studera/digitala-kulturer-kandidatprogram-HGDIK?tabs2=nav-event-1"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Explore Lund University
+  <span>↗</span>
+</a>
+
+        </div>
+
+      </article>
 
 
-      <!-- Education Timeline Placeholder -->
+      <!-- University of Bologna -->
 
-      <div style="margin-top: 4rem;">
+      <article class="education-block reveal">
 
-        <p class="page-kicker">
-          Background
-        </p>
+        <div class="education-number">
+          03
+        </div>
 
-        <h2 style="
-          font-family: var(--serif);
-          font-size: clamp(2rem, 4vw, 3.5rem);
-          font-weight: 500;
-          margin: 0;
-        ">
-          Coming soon
-        </h2>
+        <div class="education-content">
 
-      </div>
+          <p class="education-kicker">
+            Bologna · Italy
+          </p>
+
+          <h2>
+            University<br>
+            of Bologna
+          </h2>
+
+          <p class="education-description">
+            An international academic experience that expanded my
+            understanding of cultural perspectives, communication and
+            the importance of seeing ideas through different lenses.
+          </p>
+
+          <a
+  class="education-link"
+  href="https://www.unibo.it/en/university/who-we-are/our-history"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Explore University of Bologna
+  <span>↗</span>
+</a>
+
+        </div>
+
+      </article>
 
     </section>
+
+
+    <!-- Closing Statement -->
+
+    <section class="education-closing reveal">
+
+      <p>
+        Three places, three perspectives, one continuous curiosity.
+      </p>
+
+    </section>
+
 
   </main>
 
@@ -140,6 +250,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     window.addEventListener("scroll", updateHeader, {
       passive: true
+    });
+
+
+    // Scroll Reveal Animation
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
     });
 
   </script>

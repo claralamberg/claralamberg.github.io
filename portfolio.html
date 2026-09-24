@@ -10,7 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <title></title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -97,54 +97,146 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
 
-      <!-- Example Project Structure -->
+     <!-- INTRO -->
 
-      <div style="margin-top: 4rem;">
+    <main>
 
-        <p class="page-kicker">
-          Selected Work
-        </p>
+        <section class="portfolio-intro">
 
-        <h2 style="
-          font-family: var(--serif);
-          font-size: clamp(2rem, 4vw, 3.5rem);
-          font-weight: 500;
-          margin: 0;
-        ">
-          Coming soon
-        </h2>
+            <p class="eyebrow">
+                Selected work
+            </p>
 
-      </div>
+            <h1>
+                Ideas, projects
+                <br>
+                <em>&amp; perspectives.</em>
+            </h1>
 
-    </section>
+            <p class="intro-text">
+                A collection of projects exploring communication,
+                creativity, culture and digital experiences.
+            </p>
 
-  </main>
-
-
-  <!-- Footer -->
-
-  <footer class="site-footer">
-    Clara Lamberg · Berghs School of Communication
-  </footer>
+        </section>
 
 
-  <!-- Header Scroll Interaction -->
 
-  <script>
+        <!-- PROJECTS -->
 
-    const header = document.getElementById("siteHeader");
+        <section class="projects-section">
 
-    const updateHeader = () => {
-      header.classList.toggle("is-solid", window.scrollY > 24);
-    };
+            <div class="project-list">
 
-    updateHeader();
 
-    window.addEventListener("scroll", updateHeader, {
-      passive: true
-    });
+                <!-- PROJECT 01 -->
 
-  </script>
+                <article class="project-card">
 
-</body>
-</html>
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-category">
+                            Data collection &amp; Strategy
+                        </p>
+
+                        <h2>
+                            Project One
+                        </h2>
+
+                        <p>
+                            A project focused on collecting and comparing data,
+                            creative ideas and strategic thinking to practice pitching ideas.
+                        </p>
+
+                        <a
+                            href="makeitfairproject.html"
+                            class="project-button"
+                        >
+                            Explore project
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-category">
+                            Data collection &amp; Coding
+                        </p>
+
+                        <h2>
+                            Project Two
+                        </h2>
+
+                        <p>
+                            A data driven project focused on learning how to scrape a website for information
+                            and collecting data through code.
+                        </p>
+
+                        <a
+                            href="scraperproject.html"
+                            class="project-button"
+                        >
+                            Explore project
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-category">
+                            Digital Experience
+                        </p>
+
+                        <h2>
+                            Project Three
+                        </h2>
+
+                        <p>
+                            A digital project combining concept,
+                            content and user experience.
+                        </p>
+
+                        <a
+                            href="api.html"
+                            class="project-button"
+                        >
+                            Explore project
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
