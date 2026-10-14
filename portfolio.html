@@ -21,221 +21,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <!-- Header -->
 
-  <header class="site-header" id="siteHeader">
-
-    <a class="name" href="index.html">
-      Clara Lamberg
-    </a>
-
+   <header class="site-header" id="siteHeader">
+    <a class="name" href="index.html">Clara Lamberg</a>
     <nav class="site-nav" aria-label="Main navigation">
-
-      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8"
-        target="_blank"
-        rel="noopener noreferrer">
-        LinkedIn
-      </a>
-
-      <a href="mailto:clara.lamberg@hotmail.se">
-        Contact
-      </a>
-
+      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:clara.lamberg@hotmail.se">Contact</a>
     </nav>
-
   </header>
-
-
+ 
   <main>
-
-
-    <!-- Hero -->
-
-    <div class="hero-image-wrap">
-
-      <img
-        class="hero-image"
-        src="portfolio_header.png"
-        alt="Abstract image representing portfolio and creative work">
-
-      <div class="hero-image-overlay"></div>
-
-    </div>
-
-
-    <!-- Page Introduction -->
-
-    <section class="page-intro">
-
-      <p class="page-kicker">
-        Clara Lamberg
-      </p>
-
-      <h1>
-        Portfolio
-      </h1>
-
-      <p>
-        Selected campaigns, creative projects and strategic work.
-        Exploring the intersection between culture, communication and growth.
-      </p>
-
+    <section class="hero">
+      <img src="portfolio_header.png" alt="Abstract image representing portfolio and creative work">
     </section>
-
-
-    <!-- Portfolio Content -->
-
-    <section class="page-content">
-
-      <a class="back-link" href="index.html">
-        ← Back to home
-      </a>
-
-
-      <p>
-        This space is dedicated to selected projects, campaigns and creative work.
-        Each project can be expanded with context, strategic thinking, creative development
-        and outcomes.
-      </p>
-
-
-     <!-- INTRO -->
-
-    <main>
-
-        <section class="portfolio-intro">
-
-            <p class="eyebrow">
-                Selected work
-            </p>
-
-            <h1>
-                Ideas, projects
-                <br>
-                <em>&amp; perspectives.</em>
-            </h1>
-
-            <p class="intro-text">
-                A collection of projects exploring communication,
-                creativity, culture and digital experiences.
-            </p>
-
-        </section>
-
-
-
-        <!-- PROJECTS -->
-
-        <section class="projects-section">
-
-            <div class="project-list">
-
-
-                <!-- PROJECT 01 -->
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            Data collection &amp; Strategy
-                        </p>
-
-                        <h2>
-                            Project One
-                        </h2>
-
-                        <p>
-                            A project focused on collecting and comparing data,
-                            creative ideas and strategic thinking to practice pitching ideas.
-                        </p>
-
-                        <a
-                            href="makeitfairproject.html"
-                            class="project-button"
-                        >
-                            Explore project
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- PROJECT 02 -->
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            Data collection &amp; Coding
-                        </p>
-
-                        <h2>
-                            Project Two
-                        </h2>
-
-                        <p>
-                            A data driven project focused on learning how to scrape a website for information
-                            and collecting data through code.
-                        </p>
-
-                        <a
-                            href="scraperproject.html"
-                            class="project-button"
-                        >
-                            Explore project
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- PROJECT 03 -->
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            New Ideas
-                        </p>
-
-                        <h2>
-                            Project Three
-                        </h2>
-
-                        <p>
-                            A digital project combining two APIs into one concept.
-                        </p>
-
-                        <a
-                            href="api.html"
-                            class="project-button"
-                        >
-                            Explore project
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-            </div>
+ 
+    <section class="intro">
+      <div class="intro-inner">
+        <p class="label reveal">Selected work</p>
+        <h1 class="reveal">Ideas, projects <em>&amp; perspectives.</em></h1>
+        <p class="lead reveal">A collection of projects exploring communication, creativity, culture and digital experiences.</p>
+        <a class="back-link" href="index.html">← Back to home</a>
+      </div>
+    </section>
+ 
+    <section class="projects" aria-label="Projects">
+      <div class="project-list">
+ 
+        <!-- PROJECT 01 -->
+        <article class="project reveal">
+          <a class="project-media" href="makeitfairproject.html" aria-label="Explore Make It Fair">
+            <span class="num">01</span>
+            <!-- Replace with your own image, e.g. project1.png -->
+            <img src="project1.png" alt="Make It Fair project" loading="lazy" onerror="this.remove()">
+          </a>
+          <div class="project-text">
+            <p class="project-eyebrow">01 · Data collection &amp; Strategy</p>
+            <h2>Make It Fair</h2>
+            <p class="desc">A project focused on collecting and comparing data, creative ideas and strategic thinking to practice pitching ideas.</p>
+            <a class="project-link" href="makeitfairproject.html">Explore project <span>↗</span></a>
+          </div>
+        </article>
+ 
+        <!-- PROJECT 02 -->
+        <article class="project reveal">
+          <a class="project-media" href="scraperproject.html" aria-label="Explore the scraper project">
+            <span class="num">02</span>
+            <img src="project2.png" alt="Web scraper project" loading="lazy" onerror="this.remove()">
+          </a>
+          <div class="project-text">
+            <p class="project-eyebrow">02 · Data collection &amp; Coding</p>
+            <h2>The Scraper</h2>
+            <p class="desc">A data driven project focused on learning how to scrape a website for information and collecting data through code.</p>
+            <a class="project-link" href="scraperproject.html">Explore project <span>↗</span></a>
+          </div>
+        </article>
+ 
+        <!-- PROJECT 03 -->
+        <article class="project reveal">
+          <a class="project-media" href="api.html" aria-label="Explore the API project">
+            <span class="num">03</span>
+            <img src="project3.png" alt="API project" loading="lazy" onerror="this.remove()">
+          </a>
+          <div class="project-text">
+            <p class="project-eyebrow">03 · New ideas</p>
+            <h2>Two APIs, <em>one idea</em></h2>
+            <p class="desc">A digital project combining two APIs into one concept.</p>
+            <a class="project-link" href="api.html">Explore project <span>↗</span></a>
+          </div>
+        </article>
+ 
+      </div>
+    </section>
+  </main>
+ 
+  <section class="marquee" aria-label="Scrolling statement">
+    <div class="track">
+      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
+      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
+    </div>
+  </section>
+ 
+  <footer class="site-footer">
+    <p class="footer-name">Clara <em>Lamberg</em></p>
+    <div class="footer-bottom">Berghs School of Communication</div>
+  </footer>
+ 
+  <script>
+    const header = document.getElementById("siteHeader");
+    const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+ 
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

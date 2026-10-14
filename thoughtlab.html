@@ -20,129 +20,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <!-- Header -->
 
-  <header class="site-header" id="siteHeader">
-
-    <a class="name" href="index.html">
-      Clara Lamberg
-    </a>
-
+   <header class="site-header" id="siteHeader">
+    <a class="name" href="index.html">Clara Lamberg</a>
     <nav class="site-nav" aria-label="Main navigation">
-
-      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8"
-        target="_blank"
-        rel="noopener noreferrer">
-        LinkedIn
-      </a>
-
-      <a href="mailto:clara.lamberg@hotmail.se">
-        Contact
-      </a>
-
+      <a href="https://www.linkedin.com/in/clara-lamberg-18b7282b8" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:clara.lamberg@hotmail.se">Contact</a>
     </nav>
-
   </header>
-
-
+ 
   <main>
-
-
-    <!-- Hero -->
-
-    <div class="hero-image-wrap">
-
-      <img
-        class="hero-image"
-        src="thinkingoutloud.png"
-        alt="Abstract image representing ideas and cultural thinking">
-
-      <div class="hero-image-overlay"></div>
-
-    </div>
-
-
-    <!-- Introduction -->
-
-    <section class="page-intro">
-
-      <p class="page-kicker">
-        Clara Lamberg
-      </p>
-
-      <h1>
-        Thought Lab
-      </h1>
-
-      <p>
-        Ideas, observations and previous papers.
-        A space for thinking out loud about culture, communication and society.
-      </p>
-
+    <section class="hero hero-forest">
+      <img src="thinkingoutloud.png" alt="Image representing Thought Lab">
     </section>
-
-
-    <!-- Content -->
-
-    <section class="page-content">
-
-      <a class="back-link" href="index.html">
-        ← Back to home
-      </a>
-
-
-      <p>
-        Thought Lab is a collection of ideas, reflections and previous academic work.
-        Here I explore the relationship between culture, people, brands and communication.
-      </p>
-
-
-      <!-- Example Article Placeholder -->
-
-      <div style="margin-top: 4rem;">
-
-        <p class="page-kicker">
-          Selected Thinking
-        </p>
-
-        <h2 style="
-          font-family: var(--serif);
-          font-size: clamp(2rem, 4vw, 3.5rem);
-          font-weight: 500;
-          margin: 0;
-        ">
-          Coming soon
-        </h2>
-
+ 
+    <section class="intro">
+      <div class="intro-inner">
+        <p class="label reveal">Thinking out loud</p>
+        <h1 class="reveal">Thought Lab <em>&amp; ideas.</em></h1>
+        <p class="lead reveal">Ideas, observations and previous papers. A space for thinking out loud about culture, communication and society.</p>
+        <a class="back-link" href="index.html">← Back to home</a>
       </div>
-
     </section>
-
+ 
+    <section class="writing" aria-label="Articles and papers">
+ 
+      <!-- Shown while there are no articles. Delete this block when the first article is added. -->
+      <div class="coming-soon reveal">
+        <p>Coming soon</p>
+        <span>Articles, reflections and previous papers will appear here.</span>
+      </div>
+ 
+      <!-- COPY THIS BLOCK FOR EACH ARTICLE (place inside <div class="writing-list">)
+      <div class="writing-list">
+        <a class="writing-item reveal" href="article.html">
+          <p class="writing-date">Month 20XX · Paper</p>
+          <div>
+            <h2>Article title</h2>
+            <p>One or two sentences about what the text is about.</p>
+          </div>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+      -->
+ 
+    </section>
   </main>
-
-
-  <!-- Footer -->
-
+ 
+  <section class="marquee" aria-label="Scrolling statement">
+    <div class="track">
+      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
+      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
+    </div>
+  </section>
+ 
   <footer class="site-footer">
-    Clara Lamberg · Berghs School of Communication
+    <p class="footer-name">Clara <em>Lamberg</em></p>
+    <div class="footer-bottom">Berghs School of Communication</div>
   </footer>
-
-
-  <!-- Header Scroll Interaction -->
-
+ 
   <script>
-
     const header = document.getElementById("siteHeader");
-
-    const updateHeader = () => {
-      header.classList.toggle("is-solid", window.scrollY > 24);
-    };
-
-    updateHeader();
-
-    window.addEventListener("scroll", updateHeader, {
-      passive: true
-    });
-
+    const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+ 
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
   </script>
-
 </body>
 </html>
