@@ -69,25 +69,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="marquee" aria-label="Scrolling statement">
     <div class="track">
       <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
-      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span><span class="dot">✦</span><span>Growth marketing</span><span class="dot">✦</span>
-    </div>
-  </section>
- 
-  <footer class="site-footer">
-    <p class="footer-name">Clara <em>Lamberg</em></p>
-    <div class="footer-bottom">Berghs School of Communication</div>
-  </footer>
- 
-  <script>
-    const header = document.getElementById("siteHeader");
-    const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
- 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-  </script>
-</body>
-</html>
+      <span>Growth with meaning</span><span class="dot">✦</span><span>Culture &amp; communication</span><span class="dot">✦</span><span>Creative strategy</span>
